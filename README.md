@@ -107,3 +107,28 @@ templates/index.html
 </body>
 </html>
 ~~~
+
+## Use static file
+
+templates/index.html
+~~~
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <p class="static">Sayhello</p>
+    <p>{{text}}</p>
+</body>
+</html>
+~~~
+
+static/style.css
+~~~
+.static {
+    color: #ff0000;
+}
+~~~
