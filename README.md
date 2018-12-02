@@ -59,8 +59,23 @@ if __name__ == "__main__":
 
 ~~~
 
+templates/index.html
+~~~
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO</title>
+</head>
+<body>
+    <p class="static">Sayhello</p>
+</body>
+</html>
+~~~
+
 ## Use variable
 
+hello.py
 ~~~
 """Test flask."""
 from flask import Flask, render_template
@@ -76,4 +91,19 @@ def hello():
 if __name__ == "__main__":
     app.run()
 
+~~~
+
+templates/index.html
+~~~
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO</title>
+</head>
+<body>
+    <p class="static">Sayhello</p>
+    <p>{{text}}</p>
+</body>
+</html>
 ~~~
