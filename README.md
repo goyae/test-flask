@@ -43,19 +43,11 @@ cmd
 
 hello.py
 ~~~
-"""Test flask."""
-from flask import Flask, render_template
-app = Flask(__name__)
-
-
 @app.route('/')
 def hello():
     """Hello world."""
     html = render_template('index.html')
     return html
-
-if __name__ == "__main__":
-    app.run()
 
 ~~~
 
@@ -68,7 +60,7 @@ templates/index.html
     <title>HELLO</title>
 </head>
 <body>
-    <p class="static">Sayhello</p>
+    <p>Sayhello</p>
 </body>
 </html>
 ~~~
@@ -77,53 +69,24 @@ templates/index.html
 
 hello.py
 ~~~
-"""Test flask."""
-from flask import Flask, render_template
-app = Flask(__name__)
-
-
 @app.route('/')
 def hello():
     """Hello world."""
     html = render_template('index.html', text='text message')
     return html
 
-if __name__ == "__main__":
-    app.run()
-
 ~~~
 
 templates/index.html
 ~~~
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HELLO</title>
-</head>
-<body>
-    <p class="static">Sayhello</p>
-    <p>{{text}}</p>
-</body>
-</html>
+<p>{{text}}</p>
 ~~~
 
 ## Use static file
 
 templates/index.html
 ~~~
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>HELLO</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
-    <p class="static">Sayhello</p>
-    <p>{{text}}</p>
-</body>
-</html>
+<link rel="stylesheet" href="/static/style.css">
 ~~~
 
 static/style.css
