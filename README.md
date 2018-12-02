@@ -38,3 +38,60 @@ cmd
 ~~~
 
 [Show page for Hello world of flask.](http://127.0.0.1:5000/)
+
+## Apply HTML template
+
+hello.py
+~~~
+@app.route('/')
+def hello():
+    """Hello world."""
+    html = render_template('index.html')
+    return html
+
+~~~
+
+templates/index.html
+~~~
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO</title>
+</head>
+<body>
+    <p>Sayhello</p>
+</body>
+</html>
+~~~
+
+## Use variable
+
+hello.py
+~~~
+@app.route('/')
+def hello():
+    """Hello world."""
+    html = render_template('index.html', text='text message')
+    return html
+
+~~~
+
+templates/index.html
+~~~
+<p>{{text}}</p>
+~~~
+
+## Use static file
+
+templates/index.html
+~~~
+<link rel="stylesheet" href="/static/style.css">
+~~~
+
+static/style.css
+~~~
+.static {
+    color: #ff0000;
+}
+~~~
