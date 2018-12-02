@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello():
     """Hello world."""
-    html = render_template('index.html')
+    html = render_template('index.html', text='text message')
     return html
 
 if __name__ == "__main__":
